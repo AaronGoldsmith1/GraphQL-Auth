@@ -1,1 +1,1 @@
-# GraphQL-Auth
+#GraphQL Auth
