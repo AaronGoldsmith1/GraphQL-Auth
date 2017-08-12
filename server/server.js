@@ -14,6 +14,8 @@ const webpackConfig = require('../webpack.config.js');
 
 const app = express();
 
+const MONGO_URI = 'mongodb://admin:password@ds143211.mlab.com:43211/graphql-auth';
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/graphql', expressGraphQL({
@@ -31,7 +33,6 @@ app.use(session({
 }));
 app.use(webpackMiddleware(webpack(webpackConfig)));
 
-const MONGO_URI = 'mongodb://<admin>:<password123>@ds151951.mlab.com:51951/graphql-auth';
 
 // Mongoose's built in promise library is deprecated, replace it with ES2015 Promise
 mongoose.Promise = global.Promise;
