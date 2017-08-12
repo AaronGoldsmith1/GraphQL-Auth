@@ -8,7 +8,7 @@ const mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
     signup: {
-      type: UserType,
+      type: userType,
       args: {
         email: {
           type: GraphQLString
@@ -20,9 +20,6 @@ const mutation = new GraphQLObjectType({
       resolve(parentValue, {email, password}, req) {
         return AutheService.signup(email, password, req);
       }
-    },
-    logout: {
-
     }
   }
 });
