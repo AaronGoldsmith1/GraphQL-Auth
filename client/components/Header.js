@@ -5,20 +5,22 @@ import CurrentUser from '../queries/CurrentUser';
 
 class Header extends Component {
 
-  renderButtons() {}
+  renderButtons() {
+    const {loading, user} = this.props.data;
+    if (loading) {
+      return <div />;
+    }
+    //query complete
+
+  }
 
   render() {
-
     return (
-
       <nav>
         <div className="nav-wrapper">
-
           {this.renderButtons()}
-
         </div>
       </nav>
-
       );
   }
 }
