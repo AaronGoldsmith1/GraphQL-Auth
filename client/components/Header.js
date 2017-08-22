@@ -16,7 +16,16 @@ class Header extends Component {
     } else {
       return (
         <div>
-          You're not signed in.
+          <li>
+            <Link to="/signup">
+              Signup
+            </Link>
+          </li>
+          <li>
+            <Link to="/login">
+              Log In
+            </Link>
+          </li>
         </div>
       )
     }
