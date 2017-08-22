@@ -10,8 +10,15 @@ class Header extends Component {
     if (loading) {
       return <div />;
     }
-    //query complete
-
+    if (user) {
+      <div>Logout</div>
+    } else {
+      return (
+        <div>
+          You're not signed in.
+        </div>
+      )
+    }
   }
 
   render() {
