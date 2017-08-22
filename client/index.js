@@ -1,7 +1,16 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-//
-// const Root = () => {
-// };
-//
-// ReactDOM.render(<Root />, document.querySelector('#root'));
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ApolloClient from 'apollo-client';
+import { ApolloProvider } from 'react-apollo';
+
+const Root = () => {
+
+  return (
+    <div>
+      GraphQL Auth
+    </div>
+  )
+
+};
+
+ReactDOM.render(<Root />, document.querySelector('#root'));
