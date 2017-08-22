@@ -10,9 +10,11 @@ const client = new ApolloClient({
 const Root = () => {
 
   return (
+    <ApolloProvider client={client}>
     <div>
       GraphQL Auth
     </div>
+  </ApolloProvider>
   )
 
 };
