@@ -12,7 +12,9 @@ class Header extends Component {
       return <div />;
     }
     if (user) {
-      return <div>Logout</div>
+      return (
+        <li><a onClick={this.onLogoutClick.bind(this)}>Logout</a></li>
+      )
     } else {
       return (
         <div>
