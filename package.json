@@ -1,7 +1,7 @@
 {
   "name": "users",
   "version": "1.0.0",
-  "description": "GraphQL- Auth",
+  "description": "GraphQL - Auth",
   "repository": {
     "type": "git",
     "url": ""
