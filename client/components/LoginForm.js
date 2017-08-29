@@ -6,6 +6,14 @@ import { graphql } from 'react-apollo';
 
 
 class LoginForm extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      errors: []
+    };
+
+  }
 
   onSubmit({email, password}) {
     this.props.mutate({
@@ -16,14 +24,20 @@ class LoginForm extends Component {
       refetchQueries: [{
         query
       }]
-    })
+    }).catch(res => {
+      const errors = res.graphQLErrors.map(error => error.message);
+      this.setState({
+        errors
+      });
+    });
   }
 
   render() {
     return (
       <div>
         <h3>Log In</h3>
-        <AuthForm onSubmit={this.onSubmit.bind(this)} />
+        <AuthForm errors={this.state.errors}
+      onSubmit={this.onSubmit.bind(this)} />
       </div>
       );
   }
