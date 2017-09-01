@@ -14,7 +14,7 @@ const webpackConfig = require('../webpack.config.js');
 
 const app = express();
 
-const MONGO_URI = 'mongodb://admin:password@ds143211.mlab.com:43211/graphql-auth';
+const MONGO_URI = 'mongodb://';
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -32,14 +32,11 @@ app.use(session({
   })
 }));
 app.use(webpackMiddleware(webpack(webpackConfig)));
-
-
-// Mongoose's built in promise library is deprecated, replace it with ES2015 Promise
 mongoose.Promise = global.Promise;
 
 mongoose.connect(MONGO_URI);
 mongoose.connection
-  .once('open', () => console.log('Connected to MongoLab instance.'))
-  .on('error', error => console.log('Error connecting to MongoLab:', error));
+  .once('open', () => console.log('Connected to MongoDB'))
+  .on('error', error => console.log('Error connecting to MongoDB:', error));
 
 module.exports = app;
